@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {Navbar, NavbarBrand} from 'reactstrap';
+import AppLang from './Common/Language.json';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return(
+      <div>
+        <div className="Header">
+          <Navbar dark color="danger">
+            <div className="container">
+              <NavbarBrand href="">
+                {AppLang["App-Name"]}
+              </NavbarBrand>
+            </div>
+            <div className="navbar-right">
+              Login
+              {/* login work design */}
+            </div>
+          </Navbar>
+        </div>
+        <div className="Body"></div>
+        <div className="Footer">
+          <div className="container">
+            <div className="jumbotron transparent">
+              <div className="row">
+                <div className="col-md-4">
+                  <h3 className="footer-heading">{AppLang.ContactUs}</h3>
+                </div>
+                <div className="col-md-4">
+                  <h3 className="footer-heading">{AppLang.ContactUs}</h3>
+                </div>
+                <div className="col-md-4">
+                  <h3 className="footer-heading">{AppLang.ContactUs}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
